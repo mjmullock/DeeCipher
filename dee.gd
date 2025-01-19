@@ -32,7 +32,7 @@ var forced_position_delta = Vector2(0, 0)
 var glowing = false
 var being_pushed = false
 var pusher: CharacterBody2D
-var can_double_jump = Globals.is_enabled(Globals.Mods.JUMPY)
+var can_double_jump = true # Globals.is_enabled(Globals.Mods.JUMPY)
 var has_double_jump = false
 
 

@@ -36,7 +36,7 @@ edge = 1
 [node name="TopBarrier" type="StaticBody2D" parent="." index="13"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopBarrier" index="0"]
-position = Vector2(541.75, -700)
+position = Vector2(541.75, -740)
 scale = Vector2(42, 1)
 shape = SubResource("RectangleShape2D_3rxt4")
 
@@ -46,6 +46,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_r08xy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="15"]
-position = Vector2(967, -563)
+position = Vector2(905, -563)
 scale = Vector2(2, 2)
 texture = ExtResource("3_r08xy")

@@ -37,7 +37,7 @@ edge = 1
 collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopBarrier" index="0"]
-position = Vector2(192.5, -700)
+position = Vector2(192.5, -740)
 scale = Vector2(42, 1)
 shape = SubResource("RectangleShape2D_l41kb")
 

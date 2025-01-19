@@ -57,3 +57,9 @@ initial_offset = -10
 
 [node name="Goldfish3" parent="." index="15" instance=ExtResource("3_bvl2l")]
 position = Vector2(-298, 204)
+
+[node name="TransitionZone3" parent="." index="16" instance=ExtResource("2_ngobm")]
+position = Vector2(-367, -150)
+scale = Vector2(40, 1)
+next_screen = "res://clouds_leftmost.tscn"
+edge = 2

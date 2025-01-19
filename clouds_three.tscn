@@ -43,7 +43,7 @@ next_screen = "res://clouds_two.tscn"
 [node name="TopBarrier" type="StaticBody2D" parent="." index="13"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopBarrier" index="0"]
-position = Vector2(468.5, -697)
+position = Vector2(468.5, -740)
 scale = Vector2(42, 1)
 shape = SubResource("RectangleShape2D_k22pr")
 
