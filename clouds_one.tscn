@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctnkpia4w51gu"]
+
+[ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_3mc13"]
+[ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_dc6wv"]
+
+[node name="CloudsOne" instance=ExtResource("1_3mc13")]
+camera_top_limit = -800
+camera_bottom_limit = -20
+camera_left_limit = -200
+camera_right_limit = 600
+
+[node name="CollisionShape2D" parent="DeathPlane" index="0"]
+position = Vector2(0, 559)
+
+[node name="TransitionZone" parent="." index="9" instance=ExtResource("2_dc6wv")]
+position = Vector2(232, 32)
+scale = Vector2(40, 1)
+next_screen = "res://screen_one.tscn"
+edge = 3
+
+[node name="TransitionZone2" parent="." index="10" instance=ExtResource("2_dc6wv")]
+position = Vector2(-230, -374)
+scale = Vector2(1, 40)
+next_screen = "res://clouds_leftmost.tscn"
+
+[node name="TransitionZone3" parent="." index="11" instance=ExtResource("2_dc6wv")]
+position = Vector2(615, -378)
+scale = Vector2(1, 40)
+next_screen = "res://clouds_two.tscn"
+edge = 1

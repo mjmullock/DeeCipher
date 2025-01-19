@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://gfw6vvp02hp7"]
+
+[ext_resource type="Texture2D" uid="uid://bw04xybd10nkp" path="res://Eggcup.png" id="1_7pabi"]
+[ext_resource type="Script" path="res://eggcup.gd" id="1_licw6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3w75"]
+atlas = ExtResource("1_7pabi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwgo5"]
+atlas = ExtResource("1_7pabi")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2ibl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3w75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwgo5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evbh8"]
+size = Vector2(12, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc3st"]
+size = Vector2(14, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ob22f"]
+radius = 237.135
+
+[node name="Eggcup" type="CharacterBody2D" groups=["Eggcups"]]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_licw6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w2ibl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_evbh8")
+
+[node name="HazardZone" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardZone"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wc3st")
+
+[node name="ProximityDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityDetector"]
+shape = SubResource("CircleShape2D_ob22f")
+
+[connection signal="area_entered" from="ProximityDetector" to="." method="_on_proximity_detector_area_entered"]

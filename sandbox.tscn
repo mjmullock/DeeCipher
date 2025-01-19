@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1pekgvr1tfej"]
+
+[ext_resource type="Texture2D" uid="uid://c7rxv2w2dcevg" path="res://icon.svg" id="1_ev0ye"]
+[ext_resource type="PackedScene" uid="uid://bmbcfhnwybcsf" path="res://dee.tscn" id="2_g5a6p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lnh5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ufr1"]
+size = Vector2(343, 59)
+
+[node name="Sandbox" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_lnh5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(174, 322)
+shape = SubResource("RectangleShape2D_4ufr1")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(173, 321)
+scale = Vector2(2.67969, 0.46875)
+texture = ExtResource("1_ev0ye")
+
+[node name="Dee" parent="." instance=ExtResource("2_g5a6p")]
+position = Vector2(25, 260)

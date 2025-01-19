@@ -1,0 +1,277 @@
+[gd_scene load_steps=23 format=3 uid="uid://d3hj4ttdyt5w8"]
+
+[ext_resource type="Script" path="res://mod_page.gd" id="1_eqo6e"]
+[ext_resource type="Texture2D" uid="uid://ciamohiyt05hg" path="res://Eggcup_zero.png" id="2_1tnp2"]
+[ext_resource type="Texture2D" uid="uid://chbmmmlmjsbf7" path="res://Eggcup_one.png" id="3_3pssb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e885r"]
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_kof60"]
+font_size = 14
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_wnmld"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("2_1tnp2")
+frame_1/texture = ExtResource("3_3pssb")
+frame_1/duration = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5on2"]
+load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lwh7m"]
+load_path = "res://.godot/imported/Eggcup_one.png-5207e3ee468e39d219ca60d6af5b6a18.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2l8ao"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = SubResource("CompressedTexture2D_i5on2")
+frame_1/texture = SubResource("CompressedTexture2D_lwh7m")
+frame_1/duration = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n7e2e"]
+load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k2crf"]
+load_path = "res://.godot/imported/Eggcup_one.png-5207e3ee468e39d219ca60d6af5b6a18.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_er1wy"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = SubResource("CompressedTexture2D_n7e2e")
+frame_1/texture = SubResource("CompressedTexture2D_k2crf")
+frame_1/duration = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k5wfr"]
+load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_163i3"]
+load_path = "res://.godot/imported/Eggcup_one.png-5207e3ee468e39d219ca60d6af5b6a18.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_bytbd"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = SubResource("CompressedTexture2D_k5wfr")
+frame_1/texture = SubResource("CompressedTexture2D_163i3")
+frame_1/duration = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p4pem"]
+load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yu2yj"]
+load_path = "res://.godot/imported/Eggcup_one.png-5207e3ee468e39d219ca60d6af5b6a18.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_a02fj"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = SubResource("CompressedTexture2D_p4pem")
+frame_1/texture = SubResource("CompressedTexture2D_yu2yj")
+frame_1/duration = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2fn4m"]
+load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_31lql"]
+load_path = "res://.godot/imported/Eggcup_one.png-5207e3ee468e39d219ca60d6af5b6a18.ctex"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2s1bj"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = SubResource("CompressedTexture2D_2fn4m")
+frame_1/texture = SubResource("CompressedTexture2D_31lql")
+frame_1/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_a0yib"]
+font_size = 6
+
+[node name="ModPage" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eqo6e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Mod Manager"
+label_settings = SubResource("LabelSettings_e885r")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Enter mod name"
+label_settings = SubResource("LabelSettings_kof60")
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 32)
+layout_mode = 2
+context_menu_enabled = false
+shortcut_keys_enabled = false
+scroll_fit_content_height = true
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Enable"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="ValidityMessage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 12
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Active mods:"
+horizontal_alignment = 1
+
+[node name="ModGrid" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 3
+
+[node name="BloomName" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "BLOOM"
+
+[node name="BloomDescription" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "Better flower textures rendered"
+
+[node name="BloomButton" type="TextureButton" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_wnmld")
+stretch_mode = 0
+
+[node name="TuffName" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "TUFF"
+
+[node name="TuffDescription" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "Take no damage from enemies"
+
+[node name="TuffButton" type="TextureButton" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_2l8ao")
+stretch_mode = 0
+
+[node name="TipsyName" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "TIPSY"
+
+[node name="TipsyDescription" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "Objects' movement is muddled"
+
+[node name="TipsyButton" type="TextureButton" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_er1wy")
+stretch_mode = 0
+
+[node name="DoodleName" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "DOODLE"
+
+[node name="DoodleDescription" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "Dev notes visible in background"
+
+[node name="DoodleButton" type="TextureButton" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_bytbd")
+stretch_mode = 0
+
+[node name="KaizoName" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "KAIZO"
+
+[node name="KaizoDescription" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "Unfair difficulty level"
+
+[node name="KaizoButton" type="TextureButton" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_a02fj")
+stretch_mode = 0
+
+[node name="JumpyName" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "JUMPY"
+
+[node name="JumpyDescription" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "Jump again while in the air"
+
+[node name="JumpyButton" type="TextureButton" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("AnimatedTexture_2s1bj")
+stretch_mode = 0
+
+[node name="ArgentName" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "ARGENT"
+
+[node name="ArgentDescription" type="Label" parent="VBoxContainer/ModGrid"]
+visible = false
+layout_mode = 2
+text = "Grants Silver Key. Disables other mods."
+
+[node name="TextureRect7" type="TextureRect" parent="VBoxContainer/ModGrid"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("2_1tnp2")
+
+[node name="Spacer" type="Label" parent="VBoxContainer/ModGrid"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_a0yib")
+
+[node name="Spacer2" type="Label" parent="VBoxContainer/ModGrid"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_a0yib")
+
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ModGrid/BloomButton" to="." method="_on_bloom_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ModGrid/TuffButton" to="." method="_on_tuff_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ModGrid/TipsyButton" to="." method="_on_tipsy_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ModGrid/DoodleButton" to="." method="_on_doodle_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ModGrid/KaizoButton" to="." method="_on_kaizo_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ModGrid/JumpyButton" to="." method="_on_jumpy_button_pressed"]

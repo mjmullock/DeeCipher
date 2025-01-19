@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://badr3fmtuualq"]
+
+[ext_resource type="Script" path="res://transition_zone.gd" id="1_2q6u8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsxo"]
+
+[node name="TransitionZone" type="Node2D"]
+script = ExtResource("1_2q6u8")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, 0)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vcsxo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

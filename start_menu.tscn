@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpm4qi4wj2scv"]
+
+[ext_resource type="Script" path="res://start_menu.gd" id="1_h2bxd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d75u3"]
+font_size = 24
+font_color = Color(0.36564, 0.729009, 0.858996, 1)
+
+[node name="StartMenu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2bxd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "DeeCipher"
+label_settings = SubResource("LabelSettings_d75u3")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 24
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="ModsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Mods"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 24
+
+[node name="GemDisplay" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ModsButton" to="." method="_on_mods_button_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://unh7shefywvf"]
+
+[ext_resource type="PackedScene" uid="uid://bmbcfhnwybcsf" path="res://dee.tscn" id="1_3x6cq"]
+[ext_resource type="Script" path="res://screen_template.gd" id="1_xuc5s"]
+[ext_resource type="PackedScene" uid="uid://bv1rjc1o7lj45" path="res://one_bit_tile_map.tscn" id="2_th46a"]
+[ext_resource type="PackedScene" uid="uid://itrbvgc15osq" path="res://overworld_tile_map.tscn" id="3_1sdqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu1sp"]
+size = Vector2(1219.5, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0h018"]
+font_size = 12
+font_color = Color(1, 1, 1, 0.670588)
+
+[node name="ScreenTemplate" type="Node2D"]
+script = ExtResource("1_xuc5s")
+
+[node name="Dee" parent="." instance=ExtResource("1_3x6cq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OneBitTileMap" parent="." instance=ExtResource("2_th46a")]
+
+[node name="OverworldTileMap" parent="." instance=ExtResource("3_1sdqy")]
+
+[node name="DeathPlane" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathPlane"]
+shape = SubResource("RectangleShape2D_fu1sp")
+
+[node name="BloomSprites" type="Node2D" parent="."]
+visible = false
+
+[node name="KaizoDangers" type="Node2D" parent="."]
+visible = false
+
+[node name="Messages" type="Node2D" parent="."]
+
+[node name="PauseShade" type="CanvasModulate" parent="."]
+
+[node name="UIStuff" type="CanvasLayer" parent="."]
+
+[node name="Control" type="MarginContainer" parent="UIStuff"]
+offset_right = 123.0
+offset_bottom = 39.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="Score" type="Label" parent="UIStuff/Control"]
+layout_mode = 2
+text = "Score: 000000"
+label_settings = SubResource("LabelSettings_0h018")
