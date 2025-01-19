@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://duuq8jx46qa1l"]
+
+[ext_resource type="Script" path="res://mod_calc_page.gd" id="1_efcgc"]
+
+[node name="ModCalcPage" type="CenterContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_efcgc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Mod Calculator"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="WordInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+max_length = 12
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "mod"
+
+[node name="ModulusInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+max_length = 1
+
+[node name="Spacer" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="ComputeButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Compute"
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ModMgrButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Mod Manager"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ComputeButton" to="." method="_on_compute_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ModMgrButton" to="." method="_on_mod_mgr_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

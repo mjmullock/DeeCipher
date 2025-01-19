@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cujup1b2r8l7m"]
+[gd_scene load_steps=5 format=3 uid="uid://cujup1b2r8l7m"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_j34p0"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_x50l8"]
+[ext_resource type="Texture2D" uid="uid://b7j66q7xjog8o" path="res://calc_arrow.png" id="3_r08xy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rxt4"]
+size = Vector2(26.1548, 20)
 
 [node name="CloudsFour" instance=ExtResource("1_j34p0")]
 camera_top_limit = -800
@@ -28,3 +32,20 @@ position = Vector2(1100, -392)
 scale = Vector2(1, 40)
 next_screen = "res://clouds_rightmost.tscn"
 edge = 1
+
+[node name="TopBarrier" type="StaticBody2D" parent="." index="13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBarrier" index="0"]
+position = Vector2(541.75, -700)
+scale = Vector2(42, 1)
+shape = SubResource("RectangleShape2D_3rxt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="14"]
+position = Vector2(161, -563)
+scale = Vector2(2, 2)
+texture = ExtResource("3_r08xy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="15"]
+position = Vector2(967, -563)
+scale = Vector2(2, 2)
+texture = ExtResource("3_r08xy")

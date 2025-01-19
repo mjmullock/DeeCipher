@@ -52,6 +52,9 @@ func _on_button_pressed():
 	text_entry.text = ""
 	if entered_mod_name == "":
 		return
+	elif entered_mod_name == "CALC":
+		_load_calc_page()
+		return
 
 	if MOD_MAPPING.has(entered_mod_name):
 		var mod = MOD_MAPPING[entered_mod_name]
@@ -103,6 +106,11 @@ func _on_menu_button_pressed():
 	get_tree().change_scene_to_file("res://start_menu.tscn")
 	FadeAnimator.fade_from_black()
 
+
+func _load_calc_page():
+	await FadeAnimator.fade_to_black()
+	get_tree().change_scene_to_file("res://mod_calc_page.tscn")
+	FadeAnimator.fade_from_black()
 
 func _toggle_mod(mod):
 	var cells = mod_grid.get_children()

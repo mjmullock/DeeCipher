@@ -43,3 +43,9 @@ func _on_mods_button_pressed():
 	await FadeAnimator.fade_to_black()
 	get_tree().change_scene_to_file("res://mod_page.tscn")
 	FadeAnimator.fade_from_black()
+
+
+func _on_settings_button_pressed():
+	await FadeAnimator.fade_to_black()
+	get_tree().change_scene_to_file("res://settings_page.tscn")
+	FadeAnimator.fade_from_black()

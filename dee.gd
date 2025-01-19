@@ -9,11 +9,26 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -320.0
 
+enum PlayerState {
+	# Default state. Movement and action buttons affect the character.
+	CONTROLLABLE,
+	
+	# Character velocity is preset, movement and action buttons are ignored.
+	# Character is still subject to gravity and collision.
+	FORCE_MOVE,
+	
+	# Character position is forced to given values.
+	# Movement and action buttons are ignored.
+	# Character ignores gravity and collision.
+	FORCE_REPOSITION
+}
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var locked = false
-var locked_x_velocity = 0.0
+var state: PlayerState = PlayerState.CONTROLLABLE
+var forced_velocity = Vector2(0, 0)
+var forced_position_delta = Vector2(0, 0)
 var glowing = false
 var being_pushed = false
 var pusher: CharacterBody2D
@@ -33,9 +48,12 @@ func _process(_delta):
 			Globals.Permajump = has_double_jump
 		Events.pause_game.emit()
 	
-func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_mod_check"):
+		print("Mod check")
+		print(Globals.ActiveMods)
 	
-	if being_pushed and is_on_wall():
+func _physics_process(delta):
+	if being_pushed and _is_being_squished():
 		_execute_noclip(delta)
 	
 	var current_velocity = velocity
@@ -78,17 +96,30 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	if locked:
+	if state == PlayerState.FORCE_MOVE:
 		animated_sprite_2d.play("walk")
 		animated_sprite_2d.speed_scale = 0.5
-		velocity.x = locked_x_velocity
+		velocity.x = forced_velocity.x
 		velocity.y = current_velocity.y + gravity * delta
 		move_and_slide()
+	elif state == PlayerState.FORCE_REPOSITION:
+		animated_sprite_2d.play("idle")
+		position += forced_position_delta
 	else:
 		if being_pushed:
 			velocity += pusher.velocity
 		update_animation(direction)
 		move_and_slide()
+
+func _is_being_squished():
+	return _raycast(-1) and _raycast(1)
+
+func _raycast(direction):
+	var space_state = get_world_2d().direct_space_state
+	var target = Vector2(global_position.x + 10 * direction, global_position.y)
+	var ray_params = PhysicsRayQueryParameters2D.create(global_position, target)
+	ray_params.exclude = [self]
+	return space_state.intersect_ray(ray_params)
 
 func update_animation(input_axis):
 	if input_axis != 0:
@@ -138,9 +169,17 @@ func unsmooth_camera():
 func smooth_camera():
 	camera.position_smoothing_enabled = true
 
-func lock(x_velocity = SPEED/4):
-	locked = true
-	locked_x_velocity = x_velocity
+func start_force_move(x_velocity = SPEED/4, y_velocity = 0):
+	state = PlayerState.FORCE_MOVE
+	forced_velocity = Vector2(x_velocity, y_velocity)
+
+func start_force_reposition(pos_delta):
+	state = PlayerState.FORCE_REPOSITION
+	forced_position_delta = pos_delta
+	being_pushed = false
+	gravity = 0
+	collision_layer = 0
+	collision_mask = 0
 
 func _glow():
 	glowing = true
@@ -153,14 +192,9 @@ func _unglow():
 func _execute_noclip(delta):
 	# Figure out a way to send Dee into the wall
 	# and then plummeting into the chasm scene.
-	print(velocity.x)
 	var projected_x_velocity = (position.x - pusher.position.x) * delta
 	print(projected_x_velocity)
-	lock(projected_x_velocity)
-	being_pushed = false
-	gravity = 0
-	collision_layer = 0
-	collision_mask = 0
+	start_force_reposition(Vector2(projected_x_velocity, 0))
 	$NoclipTimer.start()
 
 func _on_hazard_checker_area_exited(area):
@@ -168,7 +202,8 @@ func _on_hazard_checker_area_exited(area):
 
 
 func _on_noclip_timer_timeout():
-	visible = false
+	# visible = false
+	forced_position_delta = Vector2(0, 1)
 	await get_tree().create_timer(1.0).timeout
 	Globals.TransitionEdge = Globals.Edges.UNKNOWN
 	Globals.TransitionVelocity = Vector2(0, 0)
