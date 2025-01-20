@@ -30,6 +30,10 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 text = "Start"
 
+[node name="AboutButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "About"
+
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Settings"
@@ -51,5 +55,6 @@ layout_mode = 2
 theme_override_constants/separation = 6
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ModsButton" to="." method="_on_mods_button_pressed"]

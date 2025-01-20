@@ -42,6 +42,19 @@ func _ready():
 	Events.pause_game.connect(_pause)
 	Events.unpause_game.connect(_unpause)
 	Events.points_acquired.connect(_update_score)
+	
+	_update_bloom_screens_found()
+
+func _update_bloom_screens_found():
+	match (name):
+		"ScreenRightmost":
+			Globals.BloomScreensFound[Globals.Edges.RIGHT] = null
+		"ScreenLeftmost":
+			Globals.BloomScreensFound[Globals.Edges.LEFT] = null
+		"CloudsThree":
+			Globals.BloomScreensFound[Globals.Edges.TOP] = null
+		"ScreenPit":
+			Globals.BloomScreensFound[Globals.Edges.BOTTOM] = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

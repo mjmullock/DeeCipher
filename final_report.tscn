@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7jmybbwql8a3"]
+
+[ext_resource type="Script" path="res://final_report.gd" id="1_3vvl4"]
+
+[node name="FinalReport" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3vvl4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="ResultLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+
+[node name="GemsLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ConclusionLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+horizontal_alignment = 1
+
+[node name="ConclusionLabel2" type="Label" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+
+[node name="HintLabel" type="RichTextLabel" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content = true
+
+[node name="FinalPicture" type="Sprite2D" parent="MarginContainer"]
+visible = false
+
+[node name="ReturnToMenuLabel" type="Label" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "- Press Space to return to the main menu -"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

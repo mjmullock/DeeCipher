@@ -14,5 +14,5 @@ func _on_body_entered(body):
 	body.start_force_move()
 	Globals.TransitionEdge = Globals.Edges.UNKNOWN
 	await FadeAnimator.slow_fade_to_black()
-	get_tree().change_scene_to_file("res://start_menu.tscn")
+	get_tree().change_scene_to_file("res://final_report.tscn")
 	FadeAnimator.fade_from_black()

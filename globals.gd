@@ -14,6 +14,12 @@ var TransitionPosition: Vector2
 var TransitionVelocity: Vector2
 var Points = 0
 var Permajump = false
+var HasSilverKey = false
+
+var BloomScreensFound = {}
+var HasNoClipped = false
+var HasCollidedTipsies = false
+var HasReachedMeta = false
 
 func enable(mod):
 	if mod == Mods.ARGENT:

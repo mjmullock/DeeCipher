@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdhw466vlhnfu"]
+
+[ext_resource type="PackedScene" uid="uid://cfdd1ab7avhn5" path="res://about_page_template.tscn" id="1_ckvld"]
+
+[node name="AboutPageOne" instance=ExtResource("1_ckvld")]
+next_page = "res://about_page_two.tscn"
+
+[node name="RichTextLabel" parent="CenterContainer/VBoxContainer" index="0"]
+text = "Welcome to [b]DeeCipher[/b], an experimental game that combines game-jam style development with puzzle hunt mechanics.
+
+Information needed to solve each puzzle is available in-game. A [b]guidebook[/b] containing more information, including general help and puzzle-specific hints, is also available. Please consult it if you become frustrated at any point.
+
+If you are unfamiliar with puzzle hunts, this game may not make much sense or be much fun. Check the guidebook for some starting references and useful links."

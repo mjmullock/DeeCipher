@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://2r00t241c1hs"]
+
+[ext_resource type="PackedScene" uid="uid://cfdd1ab7avhn5" path="res://about_page_template.tscn" id="1_nm1kp"]
+
+[node name="AboutPageTwo" instance=ExtResource("1_nm1kp")]
+prev_page = "res://about_page_one.tscn"
+
+[node name="RichTextLabel" parent="CenterContainer/VBoxContainer" index="0"]
+text = "Your initial goal is to bring the player character, [b]Dee[/b], home safely. Other goals may become apparent during gameplay.
+
+[b]Mods[/b] alter how the game operates, including its graphics, sprite behaviors, or other components. They also indicate progress in the puzzle hunt. Use the [b]Mod Manager[/b] page to enable or disable mods, once you know their names.
+
+[b]Gems[/b] are optional rewards for solving bonus puzzles or finding secret areas. They are not needed to complete the game. Collecting gems will not unlock or modify any puzzles."

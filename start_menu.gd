@@ -49,3 +49,9 @@ func _on_settings_button_pressed():
 	await FadeAnimator.fade_to_black()
 	get_tree().change_scene_to_file("res://settings_page.tscn")
 	FadeAnimator.fade_from_black()
+
+
+func _on_about_button_pressed():
+	await FadeAnimator.fade_to_black()
+	get_tree().change_scene_to_file("res://about_page_one.tscn")
+	FadeAnimator.fade_from_black()

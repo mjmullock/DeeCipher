@@ -32,7 +32,7 @@ var forced_position_delta = Vector2(0, 0)
 var glowing = false
 var being_pushed = false
 var pusher: CharacterBody2D
-var can_double_jump = true # Globals.is_enabled(Globals.Mods.JUMPY)
+var can_double_jump = Globals.is_enabled(Globals.Mods.JUMPY)
 var has_double_jump = false
 
 
@@ -134,7 +134,9 @@ func update_animation(input_axis):
 func _on_hazard_checker_area_entered(area):
 	print("Area in hazard checker!")
 	print(area.name)
-	if area.name == "HazardZone":
+	if area.name == "KaizoHazardZone":
+		_respawn(true)
+	elif area.name == "HazardZone":
 		if Globals.is_enabled(Globals.Mods.TUFF):
 			being_pushed = true
 			pusher = area.get_parent()
@@ -205,6 +207,7 @@ func _on_noclip_timer_timeout():
 	# visible = false
 	forced_position_delta = Vector2(0, 1)
 	await get_tree().create_timer(1.0).timeout
+	Globals.HasNoClipped = true
 	Globals.TransitionEdge = Globals.Edges.UNKNOWN
 	Globals.TransitionVelocity = Vector2(0, 0)
 	get_tree().change_scene_to_file("res://chasm.tscn")
