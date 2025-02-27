@@ -31,6 +31,7 @@ func _wipe_level_state():
 	Globals.CollectedCoins = {}
 	Globals.Points = 0
 	Globals.Permajump = false
+	Globals.HasSilverKey = false
 
 
 func _on_start_button_pressed():

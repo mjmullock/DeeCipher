@@ -75,6 +75,8 @@ script = ExtResource("1_57qm6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8sq67")
+frame = 3
+frame_progress = 0.0291585
 
 [node name="CoinCollectZone" type="Area2D" parent="."]
 collision_layer = 4

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bclee6qg331gr"]
+[gd_scene load_steps=8 format=3 uid="uid://bclee6qg331gr"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_tjeak"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_ofdi2"]
 [ext_resource type="Texture2D" uid="uid://bkdf77dbr6vsv" path="res://Diamond Flower.png" id="3_n0l8y"]
 [ext_resource type="Texture2D" uid="uid://d2yak3x1nit5l" path="res://Bloodtrap.png" id="4_ualb2"]
+[ext_resource type="PackedScene" uid="uid://bnjse04equ358" path="res://argent_key.tscn" id="5_bsabp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_apecv"]
 radius = 8.0
@@ -79,3 +80,6 @@ position = Vector2(226, -150)
 scale = Vector2(40, 1)
 next_screen = "res://clouds_one.tscn"
 edge = 2
+
+[node name="ArgentKey" parent="." index="13" instance=ExtResource("5_bsabp")]
+position = Vector2(39, 197)

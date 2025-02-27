@@ -137,7 +137,13 @@ func _on_hazard_checker_area_entered(area):
 	if area.name == "KaizoHazardZone":
 		_respawn(true)
 	elif area.name == "HazardZone":
-		if Globals.is_enabled(Globals.Mods.TUFF):
+		if Globals.is_enabled(Globals.Mods.TIPSY):
+			print("Fire away!")
+			var projectile_body = area.get_parent()
+			var fire_vector = (projectile_body.global_position - global_position)
+			projectile_body.fire(fire_vector)
+			
+		elif Globals.is_enabled(Globals.Mods.TUFF):
 			being_pushed = true
 			pusher = area.get_parent()
 		else:

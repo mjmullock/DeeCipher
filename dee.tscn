@@ -141,6 +141,7 @@ _data = {
 [node name="Dee" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 13
+floor_max_angle = 1.05418
 script = ExtResource("1_bpybp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

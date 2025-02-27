@@ -77,7 +77,7 @@ Eggcups can't hurt you now. You can even push them around!
 
 Or maybe let them push [i]you[/i] around.
 
-Just be careful not to squish against a wall. What would even happen...?
+Just be careful not to squish against a wall. What would even happen?
 """
 const TUFF_HINT_DECODE = """
 The garbage collection plane can be a scary place. Lots of debris and prototype
@@ -89,7 +89,7 @@ The first iteration of Dee's house almost had a different name. Can you guess it
 const BLOOM_HINT = """
 Did you enjoy seeing all of the flowers?
 
-And did you keep an eye out for those 'favorite' flowers, the [b]Blue Diamonds[/b]?
+And did you keep an eye out for those favorite flowers, the [b]Blue Diamonds[/b]?
 
 You may need to venture beyond them...
 """
@@ -102,12 +102,12 @@ Then, consider how you might arrange what you get.
 """
 
 const NO_MODS_MESSAGE = """
-Mods change how this game works, and using them may let you see new things.
-Try to find as many as you can!
+Mods change how this game works, and using them may let you see new things. Try to find as many as you can!
 
 Most mod names are hidden. But to get started, enter the name
 [b]BLOOM[/b]
-in the Mod Manager to improve the graphics.
+in the Mod Manager to add some greenery.
+The [b]Blue Diamond[/b] flowers are especially pretty, check them out!
 """
 
 var is_game_complete = false
@@ -157,7 +157,7 @@ func _on_timer_timeout():
 	tween.tween_callback(_show_hint_or_picture)
 
 func _show_hint_or_picture():
-	conclusion_label.queue_free()
+	conclusion_label.hide()
 	conclusion_label_copy.show()
 	if is_game_complete:
 		final_picture.show()

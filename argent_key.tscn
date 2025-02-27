@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://bnjse04equ358"]
+
+[ext_resource type="Script" path="res://argent_key.gd" id="1_sxkup"]
+[ext_resource type="Texture2D" uid="uid://bgam3rcnt6ec6" path="res://key_frames.png" id="2_ghg1a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55i47"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imlkb"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83ty3"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tre1t"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85sql"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7wt0"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g84cr"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lslmg"]
+atlas = ExtResource("2_ghg1a")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_317lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55i47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imlkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83ty3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tre1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85sql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7wt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g84cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lslmg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u53ep"]
+size = Vector2(32, 26)
+
+[node name="SilverKey" type="Node2D"]
+script = ExtResource("1_sxkup")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_317lb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_u53ep")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
