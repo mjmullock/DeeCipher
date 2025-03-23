@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://pljpqa6au6ay"]
+
+[ext_resource type="Texture2D" uid="uid://d0l6im85j1vko" path="res://spike.png" id="1_kp00d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rdhr"]
+size = Vector2(12, 11)
+
+[node name="Spike" type="Sprite2D"]
+texture_repeat = 2
+texture = ExtResource("1_kp00d")
+
+[node name="KaizoHazardZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KaizoHazardZone"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_0rdhr")

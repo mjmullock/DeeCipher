@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2kx6fkwvuvxb"]
+[gd_scene load_steps=6 format=3 uid="uid://c2kx6fkwvuvxb"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_uo8hw"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_3aclq"]
 [ext_resource type="Texture2D" uid="uid://b7j66q7xjog8o" path="res://calc_arrow.png" id="3_lx6ch"]
+[ext_resource type="Texture2D" uid="uid://clb2da4o3qttk" path="res://puzzle_arrow.png" id="4_8yn0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy7fl"]
 size = Vector2(29.7381, 20)
@@ -49,3 +50,13 @@ texture = ExtResource("3_lx6ch")
 position = Vector2(848, -563)
 scale = Vector2(2, 2)
 texture = ExtResource("3_lx6ch")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="17"]
+position = Vector2(-13, -563)
+scale = Vector2(2, 2)
+texture = ExtResource("4_8yn0i")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." index="18"]
+position = Vector2(931, -563)
+scale = Vector2(2, 2)
+texture = ExtResource("4_8yn0i")

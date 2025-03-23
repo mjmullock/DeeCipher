@@ -13,6 +13,12 @@ extends Node2D
 @onready var pause_shade = $PauseShade
 @onready var ui_layer = $UIStuff
 @onready var score = $UIStuff/Control/Score
+@onready var dev_messages = $DevMessages
+
+const RED_SHADE = Color(1, 0.2, 0.2)
+const BLANK_SHADE = Color(1, 1, 1)
+
+var base_screen_shade = BLANK_SHADE
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,14 +36,18 @@ func _ready():
 	
 	_update_score()
 
-	if Globals.is_enabled(Globals.Mods.BLOOM):
-		bloom_layer.visible = true
+	bloom_layer.visible = Globals.is_enabled(Globals.Mods.BLOOM)
+	dev_messages.visible = Globals.is_enabled(Globals.Mods.DOODLE)
 	
 	if Globals.is_enabled(Globals.Mods.KAIZO):
 		kaizo_dangers.visible = true
+		base_screen_shade = RED_SHADE
 	else:
+		base_screen_shade = BLANK_SHADE
 		for node in get_tree().get_nodes_in_group("Kaizo"):
 			node.collision_layer = 0
+	
+	pause_shade.color = base_screen_shade
 	
 	Events.pause_game.connect(_pause)
 	Events.unpause_game.connect(_unpause)
@@ -61,12 +71,12 @@ func _process(delta):
 	pass
 
 func _pause():
-	pause_shade.color = Color(0.5, 0.5, 0.5, 0.5)
+	pause_shade.color *= 0.5
 	var pause_menu = load("res://pause_menu.tscn") as PackedScene
 	ui_layer.add_child(pause_menu.instantiate())
 
 func _unpause():
-	pause_shade.color = Color(1,1,1)
+	pause_shade.color = base_screen_shade
 
 func _update_score():
 	score.text = "Score: %06d" % Globals.Points

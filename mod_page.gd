@@ -55,6 +55,13 @@ func _on_button_pressed():
 	elif entered_mod_name == "CALC":
 		_load_calc_page()
 		return
+	elif entered_mod_name == "BEAT":
+		if Globals.CollectedGems.has("BEAT"):
+			validity.text = "Already collected this gem."
+		else:
+			Globals.CollectedGems["BEAT"] = null
+			validity.text = "Collected gem!"
+		return
 
 	if MOD_MAPPING.has(entered_mod_name):
 		var mod = MOD_MAPPING[entered_mod_name]
@@ -63,6 +70,7 @@ func _on_button_pressed():
 		else:
 			Globals.KnownMods[mod] = null
 			activate_mod(mod)
+			menu_button.grab_focus()
 	else:
 		validity.text = "Unknown mod name: %s" % entered_mod_name
 		if EASTER_EGG_NAMES.has(entered_mod_name):

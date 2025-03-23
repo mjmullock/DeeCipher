@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm4ykvg1yac7m"]
+[gd_scene load_steps=6 format=3 uid="uid://cm4ykvg1yac7m"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_etbnn"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_oecwo"]
 [ext_resource type="Texture2D" uid="uid://dg1b3dp68j8k6" path="res://Fossil.png" id="3_66w1x"]
 [ext_resource type="PackedScene" uid="uid://bqn4x7xa8uf3d" path="res://observation_platform.tscn" id="4_uut3s"]
+[ext_resource type="Texture2D" uid="uid://dc4vsn1hu54fe" path="res://messages/yes.png" id="5_o71yi"]
 
 [node name="ScreenPit" instance=ExtResource("1_etbnn")]
 position = Vector2(11, 9)
@@ -114,3 +115,8 @@ texture = ExtResource("3_66w1x")
 [node name="ObservationPlatform" parent="." index="12" instance=ExtResource("4_uut3s")]
 position = Vector2(723, 387)
 camera_scroll = Vector2(160, -100)
+
+[node name="Sprite2D" type="Sprite2D" parent="DevMessages" index="0"]
+position = Vector2(703.734, 296.875)
+scale = Vector2(0.637413, 0.624023)
+texture = ExtResource("5_o71yi")

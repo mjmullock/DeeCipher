@@ -43,6 +43,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if Input.is_action_just_pressed("ui_respawn"):
+		_respawn(true)
+		return
+		
 	if Input.is_action_just_pressed("ui_pause"):
 		if can_double_jump:
 			Globals.Permajump = has_double_jump
@@ -217,3 +221,4 @@ func _on_noclip_timer_timeout():
 	Globals.TransitionEdge = Globals.Edges.UNKNOWN
 	Globals.TransitionVelocity = Vector2(0, 0)
 	get_tree().change_scene_to_file("res://chasm.tscn")
+	MusicMixer.stop_all()

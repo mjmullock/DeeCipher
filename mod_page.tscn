@@ -1,8 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://d3hj4ttdyt5w8"]
+[gd_scene load_steps=31 format=3 uid="uid://d3hj4ttdyt5w8"]
 
 [ext_resource type="Script" path="res://mod_page.gd" id="1_eqo6e"]
 [ext_resource type="Texture2D" uid="uid://ciamohiyt05hg" path="res://Eggcup_zero.png" id="2_1tnp2"]
 [ext_resource type="Texture2D" uid="uid://chbmmmlmjsbf7" path="res://Eggcup_one.png" id="3_3pssb"]
+[ext_resource type="Texture2D" uid="uid://c8w5bbqktorl6" path="res://Eggcup_zero_focus.png" id="4_ia8or"]
+[ext_resource type="Texture2D" uid="uid://bgqsvcoskcuut" path="res://Eggcup_one_focus.png" id="5_si6vx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e885r"]
 font_size = 18
@@ -15,6 +17,13 @@ frames = 2
 speed_scale = 3.0
 frame_0/texture = ExtResource("2_1tnp2")
 frame_1/texture = ExtResource("3_3pssb")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_hxnef"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_ia8or")
+frame_1/texture = ExtResource("5_si6vx")
 frame_1/duration = 1.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5on2"]
@@ -30,6 +39,13 @@ frame_0/texture = SubResource("CompressedTexture2D_i5on2")
 frame_1/texture = SubResource("CompressedTexture2D_lwh7m")
 frame_1/duration = 1.0
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_156b4"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_ia8or")
+frame_1/texture = ExtResource("5_si6vx")
+frame_1/duration = 1.0
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n7e2e"]
 load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
 
@@ -41,6 +57,13 @@ frames = 2
 speed_scale = 3.0
 frame_0/texture = SubResource("CompressedTexture2D_n7e2e")
 frame_1/texture = SubResource("CompressedTexture2D_k2crf")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_eymxt"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_ia8or")
+frame_1/texture = ExtResource("5_si6vx")
 frame_1/duration = 1.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k5wfr"]
@@ -56,6 +79,13 @@ frame_0/texture = SubResource("CompressedTexture2D_k5wfr")
 frame_1/texture = SubResource("CompressedTexture2D_163i3")
 frame_1/duration = 1.0
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_8o25c"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_ia8or")
+frame_1/texture = ExtResource("5_si6vx")
+frame_1/duration = 1.0
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p4pem"]
 load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
 
@@ -69,6 +99,13 @@ frame_0/texture = SubResource("CompressedTexture2D_p4pem")
 frame_1/texture = SubResource("CompressedTexture2D_yu2yj")
 frame_1/duration = 1.0
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_37e5g"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_ia8or")
+frame_1/texture = ExtResource("5_si6vx")
+frame_1/duration = 1.0
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2fn4m"]
 load_path = "res://.godot/imported/Eggcup_zero.png-6c27e922ffc32ef3f17e10c85d0cbc76.ctex"
 
@@ -80,6 +117,13 @@ frames = 2
 speed_scale = 3.0
 frame_0/texture = SubResource("CompressedTexture2D_2fn4m")
 frame_1/texture = SubResource("CompressedTexture2D_31lql")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_d87ff"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("4_ia8or")
+frame_1/texture = ExtResource("5_si6vx")
 frame_1/duration = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_a0yib"]
@@ -158,6 +202,7 @@ text = "Better flower textures rendered"
 visible = false
 layout_mode = 2
 texture_normal = SubResource("AnimatedTexture_wnmld")
+texture_focused = SubResource("AnimatedTexture_hxnef")
 stretch_mode = 0
 
 [node name="TuffName" type="Label" parent="VBoxContainer/ModGrid"]
@@ -174,6 +219,7 @@ text = "Take no damage from enemies"
 visible = false
 layout_mode = 2
 texture_normal = SubResource("AnimatedTexture_2l8ao")
+texture_focused = SubResource("AnimatedTexture_156b4")
 stretch_mode = 0
 
 [node name="TipsyName" type="Label" parent="VBoxContainer/ModGrid"]
@@ -190,6 +236,7 @@ text = "Objects' movement is muddled"
 visible = false
 layout_mode = 2
 texture_normal = SubResource("AnimatedTexture_er1wy")
+texture_focused = SubResource("AnimatedTexture_eymxt")
 stretch_mode = 0
 
 [node name="DoodleName" type="Label" parent="VBoxContainer/ModGrid"]
@@ -206,6 +253,7 @@ text = "Dev notes visible in background"
 visible = false
 layout_mode = 2
 texture_normal = SubResource("AnimatedTexture_bytbd")
+texture_focused = SubResource("AnimatedTexture_8o25c")
 stretch_mode = 0
 
 [node name="KaizoName" type="Label" parent="VBoxContainer/ModGrid"]
@@ -222,6 +270,7 @@ text = "Unfair difficulty level"
 visible = false
 layout_mode = 2
 texture_normal = SubResource("AnimatedTexture_a02fj")
+texture_focused = SubResource("AnimatedTexture_37e5g")
 stretch_mode = 0
 
 [node name="JumpyName" type="Label" parent="VBoxContainer/ModGrid"]
@@ -238,6 +287,7 @@ text = "Jump again while in the air"
 visible = false
 layout_mode = 2
 texture_normal = SubResource("AnimatedTexture_2s1bj")
+texture_focused = SubResource("AnimatedTexture_d87ff")
 stretch_mode = 0
 
 [node name="ArgentName" type="Label" parent="VBoxContainer/ModGrid"]

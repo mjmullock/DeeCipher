@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://gfw6vvp02hp7"]
+[gd_scene load_steps=12 format=3 uid="uid://gfw6vvp02hp7"]
 
 [ext_resource type="Texture2D" uid="uid://bw04xybd10nkp" path="res://Eggcup.png" id="1_7pabi"]
 [ext_resource type="Script" path="res://eggcup.gd" id="1_licw6"]
@@ -48,14 +48,16 @@ size = Vector2(14, 15)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ob22f"]
 radius = 237.135
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mny40"]
+
 [node name="Eggcup" type="CharacterBody2D" groups=["Eggcups"]]
 collision_layer = 8
 collision_mask = 3
+floor_stop_on_slope = false
 script = ExtResource("1_licw6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w2ibl")
-animation = &"tipsy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -73,4 +75,14 @@ shape = SubResource("RectangleShape2D_wc3st")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityDetector"]
 shape = SubResource("CircleShape2D_ob22f")
 
+[node name="SemaphoreDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SemaphoreDetector"]
+shape = SubResource("RectangleShape2D_mny40")
+
+[node name="SemaphoreTimer" type="Timer" parent="."]
+wait_time = 0.6
+
 [connection signal="area_entered" from="ProximityDetector" to="." method="_on_proximity_detector_area_entered"]
+[connection signal="body_entered" from="SemaphoreDetector" to="." method="_on_semaphore_detector_body_entered"]
+[connection signal="timeout" from="SemaphoreTimer" to="." method="_on_semaphore_timer_timeout"]

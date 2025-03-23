@@ -18,6 +18,7 @@ script = ExtResource("1_xuc5s")
 [node name="Dee" parent="." instance=ExtResource("1_3x6cq")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="OneBitTileMap" parent="." instance=ExtResource("2_th46a")]
 
@@ -50,3 +51,5 @@ theme_override_constants/margin_top = 8
 layout_mode = 2
 text = "Score: 000000"
 label_settings = SubResource("LabelSettings_0h018")
+
+[node name="DevMessages" type="Node2D" parent="."]

@@ -38,15 +38,17 @@ Double-jumping is a powerful skill. But do you need to stop at two jumps?
 A certain doodled message might be useful here...
 """
 const JUMPY_HINT_DECODE = """
-Have you reached everywhere you can? Then a bit of math may be in order.
+Have you reached everywhere you can? Then some math may be in order.
 
 Make sure you've understood the simple examples, and don't be afraid to
-rely on a calculator. There's even a special one in-game! Did you find it?
+rely on a calculator.
+
+There's even a special one in-game! Did you find it?
 """
 
 const KAIZO_HINT = """
 Well done getting through a brutally difficult level. It needed a lot
-of precise jumpwork, especially in those [b]Red-bordered sections[/b].
+of precise jumpwork, especially in those [b]Skull-bordered sections[/b].
 
 I could hear the key taps all the way from here!
 
@@ -57,11 +59,11 @@ const DOODLE_HINT = """
 That dev sure had a lot to say. But it's important to filter out the
 important messages from among them.
 
-All of the doodles marked with a [b]green spiral[/b] seem to have a common theme...
+All of the doodles marked with [b]green text[/b] seem to have a common theme...
 """
 
 const TIPSY_HINT = """
-Poor eggcups, stuck spinning in the air. Unless you sent some of them
+Poor eggcups, stuck spinning in the air. Unless you sent them
 flying off into the distance, of course.
 
 Or maybe you sent them into each other?
@@ -133,11 +135,11 @@ func _ready():
 		1:
 			gems_label.text = GEMS_PREFIX + "1 gem. Nice!"
 		2,3:
-			gems_label.text = GEMS_PREFIX + gem_count + " gems. Nice!"
+			gems_label.text = GEMS_PREFIX + str(gem_count) + " gems. Nice!"
 		4,5:
-			gems_label.text = GEMS_PREFIX + gem_count + " gems. Well done!"
+			gems_label.text = GEMS_PREFIX + str(gem_count) + " gems. Well done!"
 		6,7:
-			gems_label.text = GEMS_PREFIX + gem_count + " gems. Extraordinary!"
+			gems_label.text = GEMS_PREFIX + str(gem_count) + " gems. Extraordinary!"
 		8:
 			gems_label.text = GEMS_PREFIX + "8 gems. That's all of them!"
 

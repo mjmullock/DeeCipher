@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpm4qi4wj2scv"]
+[gd_scene load_steps=4 format=3 uid="uid://bpm4qi4wj2scv"]
 
 [ext_resource type="Script" path="res://start_menu.gd" id="1_h2bxd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d75u3"]
 font_size = 24
 font_color = Color(0.36564, 0.729009, 0.858996, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wk8bh"]
+font_size = 12
+font_color = Color(0.364706, 0.729412, 0.858824, 1)
 
 [node name="StartMenu" type="CenterContainer"]
 anchors_preset = 15
@@ -21,6 +25,11 @@ layout_mode = 2
 layout_mode = 2
 text = "DeeCipher"
 label_settings = SubResource("LabelSettings_d75u3")
+
+[node name="Subtitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_wk8bh")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2

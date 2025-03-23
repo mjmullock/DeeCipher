@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjou8xodul0r8"]
+[gd_scene load_steps=11 format=3 uid="uid://cjou8xodul0r8"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_we0cp"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_hpp65"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://07m0n6xkdw5a" path="res://cloud_2.png" id="6_yrvcm"]
 [ext_resource type="Texture2D" uid="uid://bfrvmd8mukhoa" path="res://cloud_3.png" id="7_dca3t"]
 [ext_resource type="PackedScene" uid="uid://bqn4x7xa8uf3d" path="res://observation_platform.tscn" id="8_auw25"]
+[ext_resource type="Texture2D" uid="uid://clb2da4o3qttk" path="res://puzzle_arrow.png" id="9_d0jap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k22pr"]
 size = Vector2(24.7857, 26)
@@ -157,3 +158,13 @@ texture = ExtResource("4_giko1")
 [node name="ObservationPlatform" parent="." index="17" instance=ExtResource("8_auw25")]
 position = Vector2(361, -141)
 camera_scroll = Vector2(280, -150)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="19"]
+position = Vector2(127, -563)
+scale = Vector2(2, 2)
+texture = ExtResource("9_d0jap")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." index="20"]
+position = Vector2(925, -563)
+scale = Vector2(2, 2)
+texture = ExtResource("9_d0jap")
