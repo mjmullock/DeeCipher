@@ -25,4 +25,11 @@ func _on_area_2d_body_entered(body):
 
 func _transition():
 	Globals.TransitionEdge = edge
-	get_tree().change_scene_to_file(next_screen)
+	if Globals.trans_delay > 0:
+		get_tree().paused = true
+		await get_tree().create_timer(Globals.trans_delay * 0.1).timeout
+		get_tree().paused = false
+	if Globals.trans_delay == 46 and not (Globals.CollectedGems.has("DELAY")):
+		get_tree().change_scene_to_file("res://waiting_room.tscn")
+	else:
+		get_tree().change_scene_to_file(next_screen)

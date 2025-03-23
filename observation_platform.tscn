@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqn4x7xa8uf3d"]
 
-[ext_resource type="Texture2D" uid="uid://c7rxv2w2dcevg" path="res://icon.svg" id="1_2p6bj"]
 [ext_resource type="Script" path="res://observation_platform.gd" id="1_emp61"]
+[ext_resource type="Texture2D" uid="uid://bm65woaao1ok8" path="res://stump.png" id="2_fyo2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvkn7"]
 size = Vector2(36, 12)
@@ -13,8 +13,9 @@ size = Vector2(36, 8)
 script = ExtResource("1_emp61")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.1)
-texture = ExtResource("1_2p6bj")
+position = Vector2(2.02656e-06, -9.5)
+scale = Vector2(1.125, 0.96875)
+texture = ExtResource("2_fyo2y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qvkn7")

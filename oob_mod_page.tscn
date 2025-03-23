@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=3 uid="uid://fn67ftksl3dc"]
+
+[ext_resource type="Script" path="res://oob_mod_page.gd" id="1_8y5yv"]
+[ext_resource type="PackedScene" uid="uid://bmbcfhnwybcsf" path="res://dee.tscn" id="1_kj3o8"]
+[ext_resource type="Texture2D" uid="uid://ctjjdgorf1716" path="res://mod_page_top.png" id="2_8k0bc"]
+[ext_resource type="Texture2D" uid="uid://cg6h8awqje5cn" path="res://mod_name_bg.png" id="3_sm143"]
+[ext_resource type="Texture2D" uid="uid://bo6ja8mss18pi" path="res://mod_page_block.png" id="4_dnvpe"]
+[ext_resource type="PackedScene" uid="uid://gfw6vvp02hp7" path="res://eggcup.tscn" id="6_1l6ec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kfxk"]
+size = Vector2(398, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wkyv"]
+size = Vector2(20, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4um8"]
+size = Vector2(20, 500)
+
+[node name="OobModPage" type="Node2D"]
+script = ExtResource("1_8y5yv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8k0bc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 181)
+texture = ExtResource("3_sm143")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(78, 18)
+texture = ExtResource("4_dnvpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(78, 19.5)
+shape = SubResource("RectangleShape2D_4kfxk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 380)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 2.5)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_0wkyv")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(0, -109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(0, 2.5)
+scale = Vector2(50, 1)
+shape = SubResource("RectangleShape2D_0wkyv")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(500, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(0, 139)
+shape = SubResource("RectangleShape2D_k4um8")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-490, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(0, 139)
+shape = SubResource("RectangleShape2D_k4um8")
+
+[node name="Dee" parent="." instance=ExtResource("1_kj3o8")]
+position = Vector2(-410, 347)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 247.0
+offset_top = 103.0
+offset_right = 261.0
+offset_bottom = 126.0
+text = "E"
+
+[node name="Eggcup" parent="." instance=ExtResource("6_1l6ec")]
+position = Vector2(250, 115)
+suspended = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 244.0
+offset_top = 136.0
+offset_right = 258.0
+offset_bottom = 159.0
+text = "U"
+
+[node name="Eggcup2" parent="." instance=ExtResource("6_1l6ec")]
+position = Vector2(250, 148)
+suspended = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 167.0
+offset_right = 259.0
+offset_bottom = 190.0
+text = "X"
+
+[node name="Eggcup3" parent="." instance=ExtResource("6_1l6ec")]
+position = Vector2(250, 180)
+suspended = true
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 199.0
+offset_right = 259.0
+offset_bottom = 222.0
+text = "V"
+
+[node name="Eggcup4" parent="." instance=ExtResource("6_1l6ec")]
+position = Vector2(250, 212)
+suspended = true
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 244.0
+offset_top = 231.0
+offset_right = 259.0
+offset_bottom = 254.0
+text = "M"
+
+[node name="Eggcup5" parent="." instance=ExtResource("6_1l6ec")]
+position = Vector2(250, 244)
+suspended = true
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 249.0
+offset_top = 264.0
+offset_right = 259.0
+offset_bottom = 287.0
+text = "I"
+
+[node name="Eggcup6" parent="." instance=ExtResource("6_1l6ec")]
+position = Vector2(250, 276)
+suspended = true
+
+[node name="Label7" type="Label" parent="."]
+offset_left = -214.0
+offset_top = 69.0
+offset_right = -174.0
+offset_bottom = 92.0
+text = "A/Z ?"

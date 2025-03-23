@@ -21,6 +21,10 @@ var HasNoClipped = false
 var HasCollidedTipsies = false
 var HasReachedMeta = false
 
+var play_music = true
+var play_sfx = true
+var trans_delay = 0
+
 func enable(mod):
 	if mod == Mods.ARGENT:
 		ActiveMods = {}
@@ -31,3 +35,15 @@ func is_enabled(mod):
 
 func add_points(amount):
 	Points += amount
+
+func set_play_music(val):
+	play_music = val
+	if val == false:
+		MusicMixer.stop_all()
+	else:
+		MusicMixer.play_title()
+
+func set_play_sfx(val):
+	play_sfx = val
+	if val == true:
+		SfxMixer.play_coin()

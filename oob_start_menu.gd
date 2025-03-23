@@ -1,19 +1,12 @@
 extends Node2D
 
-@export var uuid: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Globals.CollectedGems.has(uuid):
-		queue_free()
+	$Dee.set_camera_limits(-350, 200, -400, 400)
+	MusicMixer.play_title()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_area_2d_body_entered(body):
-	SfxMixer.play_gem()
-	Globals.CollectedGems[uuid] = null
-	queue_free()

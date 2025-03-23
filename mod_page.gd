@@ -59,6 +59,7 @@ func _on_button_pressed():
 		if Globals.CollectedGems.has("BEAT"):
 			validity.text = "Already collected this gem."
 		else:
+			SfxMixer.play_gem()
 			Globals.CollectedGems["BEAT"] = null
 			validity.text = "Collected gem!"
 		return

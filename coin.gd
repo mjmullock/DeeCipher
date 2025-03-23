@@ -27,6 +27,7 @@ func _physics_process(delta):
 		return
 
 func _on_coin_collect_zone_body_entered(body):
+	SfxMixer.play_coin()
 	Globals.add_points(points)
 	Globals.CollectedCoins[uuid] = null
 	Events.points_acquired.emit()

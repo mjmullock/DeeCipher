@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnpserwkk8v4d"]
+[gd_scene load_steps=16 format=3 uid="uid://dnpserwkk8v4d"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_eed4t"]
 [ext_resource type="PackedScene" uid="uid://gfw6vvp02hp7" path="res://eggcup.tscn" id="2_60hlo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://diy57i06wgekn" path="res://coin.tscn" id="4_gp342"]
 [ext_resource type="Texture2D" uid="uid://bkdf77dbr6vsv" path="res://Diamond Flower.png" id="5_rm1vq"]
 [ext_resource type="Texture2D" uid="uid://dkukcgoiajn6p" path="res://Skull.png" id="6_ipyod"]
+[ext_resource type="Texture2D" uid="uid://b3ain8nvg4skg" path="res://Rosebush.png" id="6_l8ppn"]
 [ext_resource type="PackedScene" uid="uid://dgiwceyiwed5h" path="res://gem.tscn" id="6_rp5sf"]
 [ext_resource type="Texture2D" uid="uid://d2yak3x1nit5l" path="res://Bloodtrap.png" id="7_111yi"]
 [ext_resource type="Texture2D" uid="uid://cjl4wrbwihiiv" path="res://messages/cute.png" id="7_tnjxh"]
@@ -146,6 +147,14 @@ edge = 2
 [node name="DiamondFlower" type="Sprite2D" parent="BloomSprites" index="0"]
 position = Vector2(-22, -56)
 texture = ExtResource("5_rm1vq")
+
+[node name="Sprite2D" type="Sprite2D" parent="BloomSprites" index="1"]
+position = Vector2(355, 212)
+texture = ExtResource("6_l8ppn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BloomSprites" index="2"]
+position = Vector2(585, 100)
+texture = ExtResource("6_l8ppn")
 
 [node name="Sprite2D" type="Sprite2D" parent="KaizoDangers" index="0"]
 position = Vector2(337, 244)

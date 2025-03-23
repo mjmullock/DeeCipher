@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bijeimtedb3j1"]
+[gd_scene load_steps=20 format=3 uid="uid://bijeimtedb3j1"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_vh5rh"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_3ikrj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bkdf77dbr6vsv" path="res://Diamond Flower.png" id="5_x4oga"]
 [ext_resource type="Texture2D" uid="uid://cgwemitxwunoq" path="res://messages/pause_fix.png" id="6_etp3n"]
 [ext_resource type="Texture2D" uid="uid://d2yak3x1nit5l" path="res://Bloodtrap.png" id="6_oicdx"]
+[ext_resource type="Texture2D" uid="uid://b3ain8nvg4skg" path="res://Rosebush.png" id="6_woxb7"]
 [ext_resource type="Texture2D" uid="uid://cnk77t3uyrkmr" path="res://Walkway.png" id="7_4quj5"]
 [ext_resource type="Texture2D" uid="uid://s7b4i67ulqa" path="res://messages/collide.png" id="7_s5bpl"]
 [ext_resource type="Texture2D" uid="uid://3sbt4ub6kq4y" path="res://messages/catjam.png" id="8_7dtt7"]
@@ -109,6 +110,18 @@ edge = 3
 [node name="DiamondFlower" type="Sprite2D" parent="BloomSprites" index="0"]
 position = Vector2(504, 232)
 texture = ExtResource("5_x4oga")
+
+[node name="Sprite2D" type="Sprite2D" parent="BloomSprites" index="1"]
+position = Vector2(-95, 226)
+texture = ExtResource("6_woxb7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BloomSprites" index="2"]
+position = Vector2(160, 212)
+texture = ExtResource("6_woxb7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="BloomSprites" index="3"]
+position = Vector2(683, 130)
+texture = ExtResource("6_woxb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="KaizoDangers" index="0"]
 position = Vector2(-113, 232)

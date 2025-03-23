@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf7jv2o1v0jr6"]
+
+[ext_resource type="AudioStream" uid="uid://b0m1dbd57ybax" path="res://coin_collect.mp3" id="1_8vvb1"]
+[ext_resource type="Script" path="res://sfx_mixer.gd" id="1_qno4v"]
+[ext_resource type="AudioStream" uid="uid://dbmqer0au735g" path="res://gem_collect.mp3" id="2_3mwfj"]
+
+[node name="SfxMixer" type="Node"]
+script = ExtResource("1_qno4v")
+
+[node name="Coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_8vvb1")
+volume_db = -2.0
+
+[node name="Gem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3mwfj")
+volume_db = -2.0

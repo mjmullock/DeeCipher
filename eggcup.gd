@@ -2,6 +2,7 @@ class_name Eggcup
 extends CharacterBody2D
 
 @export var wait_on_proximity: bool = false
+@export var suspended: bool = false
 @export var direction: int = 1
 @export var semaphore_angle: Vector2
 @export var semaphore_pair: Eggcup
@@ -32,7 +33,7 @@ var fire_velocity = Vector2(0, 0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tipsy = Globals.is_enabled(Globals.Mods.TIPSY)
-	if tipsy:
+	if tipsy and not suspended:
 		start_position.y -= 32
 		global_position = start_position
 	sprite.play("default")
@@ -41,6 +42,9 @@ func _process(delta):
 	pass
 
 func _physics_process(delta):
+	if suspended:
+		return
+		
 	if semaphore_state:
 		if semaphore_outgoing:
 			position += semaphore_angle * SEMAPHORE_SPEED * delta
@@ -73,10 +77,17 @@ func _physics_process(delta):
 
 func fire(velocity):
 	print("firing?")
+	if suspended:
+		# wipe all collision
+		collision_layer = 0
+		collision_layer = 0
+	else:
+		# should still hit each other
+		collision_layer = 3
+		collision_mask = 3
+	suspended = false
 	just_fired = true
 	fire_velocity = velocity
-	collision_layer = 3
-	collision_mask = 3
 
 func respawn():
 	position = start_position

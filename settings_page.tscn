@@ -1,15 +1,65 @@
-[gd_scene format=3 uid="uid://dd6akkc5dvkbm"]
+[gd_scene load_steps=2 format=3 uid="uid://dd6akkc5dvkbm"]
+
+[ext_resource type="Script" path="res://settings_page.gd" id="1_t8b8s"]
 
 [node name="SettingsPage" type="CenterContainer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+script = ExtResource("1_t8b8s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Game Settings
 "
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Play music   "
+
+[node name="CheckButton2" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Play SFX"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Transition delay   "
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 50.0
+rounded = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Move with"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+item_count = 1
+selected = 0
+popup/item_0/text = "Arrow keys"
+popup/item_0/id = 0
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="toggled" from="VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

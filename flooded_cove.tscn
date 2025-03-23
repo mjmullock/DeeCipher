@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bklt6cggrag7h"]
+[gd_scene load_steps=12 format=3 uid="uid://bklt6cggrag7h"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_g1iyq"]
+[ext_resource type="Texture2D" uid="uid://b1aqc1pygw5xt" path="res://messages/mod_lesson_1.png" id="2_dqksx"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_xlfnq"]
+[ext_resource type="Texture2D" uid="uid://bsj4xoy6qjgjm" path="res://messages/mod_lesson_2.png" id="3_ijgyk"]
+[ext_resource type="Texture2D" uid="uid://cchnktltxg72t" path="res://messages/mod_lesson_3.png" id="4_jucib"]
+[ext_resource type="Texture2D" uid="uid://b4d815al4ukd6" path="res://messages/mod_1.png" id="5_yhp80"]
+[ext_resource type="Texture2D" uid="uid://lm7j6s380r7c" path="res://messages/mod_2.png" id="6_bepl2"]
+[ext_resource type="Texture2D" uid="uid://cq7c8qb25u6cp" path="res://messages/mod_3.png" id="7_xoan1"]
+[ext_resource type="Texture2D" uid="uid://ld3vc3jvv54u" path="res://messages/mod_4.png" id="8_x1ddn"]
 
 [sub_resource type="Gradient" id="Gradient_e7ciw"]
 colors = PackedColorArray(0.054902, 0.509804, 0.811765, 1, 0.270588, 0.85098, 1, 0.913725)
@@ -30,6 +37,41 @@ layer_0/tile_data = PackedInt32Array(1048575, 131072, 0, 1114111, 131072, 1, 111
 
 [node name="CollisionShape2D" parent="DeathPlane" index="0"]
 position = Vector2(-517, 585)
+
+[node name="Sprite2D" type="Sprite2D" parent="Messages" index="0"]
+position = Vector2(-210.689, 27.25)
+scale = Vector2(0.455556, 0.455556)
+texture = ExtResource("2_dqksx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Messages" index="1"]
+position = Vector2(-444.689, 27.25)
+scale = Vector2(0.455556, 0.455556)
+texture = ExtResource("3_ijgyk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Messages" index="2"]
+position = Vector2(-663.689, 27.25)
+scale = Vector2(0.455556, 0.455556)
+texture = ExtResource("4_jucib")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Messages" index="3"]
+position = Vector2(-496, -273)
+scale = Vector2(0.455556, 0.455556)
+texture = ExtResource("5_yhp80")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Messages" index="4"]
+position = Vector2(-1103, 25)
+scale = Vector2(0.455556, 0.455556)
+texture = ExtResource("6_bepl2")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Messages" index="5"]
+position = Vector2(-173, 477)
+scale = Vector2(0.455556, 0.455556)
+texture = ExtResource("7_xoan1")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Messages" index="6"]
+position = Vector2(-1196, -264)
+scale = Vector2(0.455556, 0.455556)
+texture = ExtResource("8_x1ddn")
 
 [node name="TransitionZone" parent="." index="11" instance=ExtResource("2_xlfnq")]
 position = Vector2(0, 222)

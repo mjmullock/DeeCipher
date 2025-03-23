@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bclee6qg331gr"]
+[gd_scene load_steps=15 format=3 uid="uid://bclee6qg331gr"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_tjeak"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="2_ofdi2"]
 [ext_resource type="Texture2D" uid="uid://bkdf77dbr6vsv" path="res://Diamond Flower.png" id="3_n0l8y"]
+[ext_resource type="Texture2D" uid="uid://b3ain8nvg4skg" path="res://Rosebush.png" id="4_ieuv5"]
 [ext_resource type="Texture2D" uid="uid://d2yak3x1nit5l" path="res://Bloodtrap.png" id="4_ualb2"]
 [ext_resource type="Texture2D" uid="uid://bo5b8vcek3h71" path="res://Badsun.png" id="5_4781c"]
 [ext_resource type="PackedScene" uid="uid://bnjse04equ358" path="res://argent_key.tscn" id="5_bsabp"]
@@ -52,6 +53,18 @@ edge = 1
 [node name="DiamondFlower" type="Sprite2D" parent="BloomSprites" index="0"]
 position = Vector2(-172, 214)
 texture = ExtResource("3_n0l8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="BloomSprites" index="1"]
+position = Vector2(3, 209)
+texture = ExtResource("4_ieuv5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BloomSprites" index="2"]
+position = Vector2(199, 208)
+texture = ExtResource("4_ieuv5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="BloomSprites" index="3"]
+position = Vector2(530, 176)
+texture = ExtResource("4_ieuv5")
 
 [node name="Sprite2D" type="Sprite2D" parent="KaizoDangers" index="0"]
 position = Vector2(45, 214)

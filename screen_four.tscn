@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjef7pcmecgb6"]
+[gd_scene load_steps=17 format=3 uid="uid://bjef7pcmecgb6"]
 
 [ext_resource type="PackedScene" uid="uid://unh7shefywvf" path="res://screen_template.tscn" id="1_smo48"]
 [ext_resource type="PackedScene" uid="uid://gfw6vvp02hp7" path="res://eggcup.tscn" id="2_2q1nn"]
 [ext_resource type="PackedScene" uid="uid://diy57i06wgekn" path="res://coin.tscn" id="3_n3w7m"]
 [ext_resource type="PackedScene" uid="uid://badr3fmtuualq" path="res://transition_zone.tscn" id="4_xdnjf"]
 [ext_resource type="Texture2D" uid="uid://bkdf77dbr6vsv" path="res://Diamond Flower.png" id="5_uadbt"]
+[ext_resource type="Texture2D" uid="uid://b3ain8nvg4skg" path="res://Rosebush.png" id="6_3rs8l"]
 [ext_resource type="PackedScene" uid="uid://buoy6aq15fcix" path="res://slow_fade_zone.tscn" id="6_f5pgm"]
 [ext_resource type="Texture2D" uid="uid://dkukcgoiajn6p" path="res://Skull.png" id="6_t2wda"]
 [ext_resource type="Texture2D" uid="uid://w3wmv5k3e7x7" path="res://messages/boring.png" id="7_jjhh6"]
@@ -113,6 +114,14 @@ position = Vector2(1060, 212)
 [node name="DiamondFlower" type="Sprite2D" parent="BloomSprites" index="0"]
 position = Vector2(-39, 4)
 texture = ExtResource("5_uadbt")
+
+[node name="Sprite2D" type="Sprite2D" parent="BloomSprites" index="1"]
+position = Vector2(-802, 16)
+texture = ExtResource("6_3rs8l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="BloomSprites" index="2"]
+position = Vector2(-661, 15)
+texture = ExtResource("6_3rs8l")
 
 [node name="Sprite2D" type="Sprite2D" parent="KaizoDangers" index="0"]
 position = Vector2(136, 218)

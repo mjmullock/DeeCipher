@@ -11,7 +11,7 @@ func stop_all():
 	$KaizoMusic.stop()
 	
 func play_title():
-	if (current_track == Track.TITLE):
+	if !Globals.play_music or current_track == Track.TITLE:
 		return
 	current_track = Track.TITLE
 	$KaizoMusic.stop()
@@ -19,7 +19,7 @@ func play_title():
 	$TitleMusic.play()
 	
 func play_level():
-	if (current_track == Track.LEVEL):
+	if !Globals.play_music or current_track == Track.LEVEL:
 		return
 	current_track = Track.LEVEL
 	$TitleMusic.stop()
@@ -27,7 +27,7 @@ func play_level():
 	$LevelMusic.play()
 	
 func play_kaizo():
-	if (current_track == Track.KAIZO):
+	if !Globals.play_music or current_track == Track.KAIZO:
 		return
 	current_track = Track.KAIZO
 	$TitleMusic.stop()
